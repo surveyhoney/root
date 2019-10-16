@@ -50,6 +50,7 @@
 
 .div-block {
   position: relative;
+  max-width: 1180px;
 }
 
 .rich-text-block {
@@ -167,6 +168,10 @@
   margin-left: -2rem;
   padding-left: 0rem;
   background-color: #f46818;
+}
+
+.div-block-4 {
+  max-width: 1180px;
 }
 
 @media (max-width: 991px) {
