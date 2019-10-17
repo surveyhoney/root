@@ -243,6 +243,14 @@
 }
 
 @media (max-width: 479px) {
+  .image-2 {
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .footer__body__links {
+    max-width: 240px;
+    padding-top: 20px;
+  }
   .container-3 {
     padding-right: 32px;
     padding-left: 32px;
