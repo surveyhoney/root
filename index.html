@@ -1,8 +1,17 @@
 <!DOCTYPE html>
 
 <head>
-    <meta http-equiv="refresh" content="0; url=https://lp.surveyhoney.com/lp1" />
     <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
 </head>
+
+<body>
+    <script>
+        query = window.location.href.split('?')[1];
+        url = "https://lp.surveyhoney.com";
+        if (typeof query != "undefined") url += '?' + query;
+        window.location.replace(url);
+    </script>
+
+</body>
 
 </html>
