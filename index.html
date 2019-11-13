@@ -26,8 +26,10 @@
             query = window.location.href.split('?')[1];
             login_url = "https://app.surveyhoney.com/";
             lp_url = "https://lp.surveyhoney.com/lp1"
-            if (typeof query != "undefined") login_url += '?' + query;
-            if (typeof query != "undefined") lp_url += '?' + query;
+            if (typeof query != "undefined") {
+                login_url += '?' + query;
+                lp_url += '?' + query;
+            }
 
             if (typeof loginTracker === "undefined") {
                 window.location.replace(lp_url);
