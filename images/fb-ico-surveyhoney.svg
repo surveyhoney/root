@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" viewBox="0 0 32 32">
+  <defs>
+    <clipPath id="clip-fb-ico-surveyhoney">
+      <rect width="32" height="32"/>
+    </clipPath>
+  </defs>
+  <g id="fb-ico-surveyhoney" clip-path="url(#clip-fb-ico-surveyhoney)">
+    <path id="Trazado_218" data-name="Trazado 218" d="M77.857,54.674V27.456a1.38,1.38,0,0,0-1.369-1.391H49.226a1.379,1.379,0,0,0-1.368,1.384V54.677a1.38,1.38,0,0,0,1.369,1.388h15.14V44.021H60.458V39.871h3.908V35.365A4.605,4.605,0,0,1,68.72,30.85h4.375v3.775H71.077c-.994,0-2.32.821-2.32,1.83v3.417H72.7v4.149H68.756V56.065h7.732A1.38,1.38,0,0,0,77.857,54.674Z" transform="translate(-46.857 -25.065)" fill="#fff"/>
+  </g>
+</svg>

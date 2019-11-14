@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" viewBox="0 0 32 32">
+  <defs>
+    <clipPath id="clip-heart-ico-surveyhoney">
+      <rect width="32" height="32"/>
+    </clipPath>
+  </defs>
+  <g id="heart-ico-surveyhoney" clip-path="url(#clip-heart-ico-surveyhoney)">
+    <path id="Trazado_283" data-name="Trazado 283" d="M785.222,541.013h0a7.7,7.7,0,0,0-10.856-.032,7.7,7.7,0,0,0-10.856.032h0a7.7,7.7,0,0,0,0,10.89l10.856,10.856L785.222,551.9A7.7,7.7,0,0,0,785.222,541.013Z" transform="translate(-758.255 -534.258)" fill="#fdc14e"/>
+  </g>
+</svg>

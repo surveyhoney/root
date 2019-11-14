@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="64.693" height="54.541" viewBox="0 0 64.693 54.541">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.174" y1="0.28" x2="0.685" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#fdc14e"/>
+      <stop offset="1" stop-color="#f46818"/>
+    </linearGradient>
+  </defs>
+  <path id="ico-ad-money-gradient-sh" d="M0,35.427A18.114,18.114,0,1,1,18.114,53.541,18.114,18.114,0,0,1,0,35.427ZM37.378,22.045A13.158,13.158,0,1,1,50.536,35.2,13.158,13.158,0,0,1,37.378,22.045ZM22.093,8.385a8.385,8.385,0,1,1,8.385,8.385A8.385,8.385,0,0,1,22.093,8.385Z" transform="translate(0.5 0.5)" stroke="rgba(0,0,0,0)" stroke-width="1" fill="url(#linear-gradient)"/>
+</svg>

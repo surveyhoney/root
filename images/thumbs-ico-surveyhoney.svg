@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" viewBox="0 0 32 32">
+  <defs>
+    <clipPath id="clip-thumbs-ico-surveyhoney">
+      <rect width="32" height="32"/>
+    </clipPath>
+  </defs>
+  <g id="thumbs-ico-surveyhoney" clip-path="url(#clip-thumbs-ico-surveyhoney)">
+    <g id="Grupo_139" data-name="Grupo 139" transform="translate(-1265.809 -517.79)">
+      <path id="Trazado_284" data-name="Trazado 284" d="M1340.284,529.883c-3.1,0-6.719.035-6.8-.044,3.732-8.984-3.818-12.59-4.423-8.154a9.986,9.986,0,0,1-7.1,8.7,1.175,1.175,0,0,0-.825,1.165q0,.084,0,.169v12.558l.114.7c.691,2.211,15.472,2.2,15.472,2.2,1.813.127,4.5-1.025,3.255-4.2a2.579,2.579,0,0,0,.967-3.87,2.692,2.692,0,0,0,1.106-4.008C1345.1,533.018,1343.161,529.883,1340.284,529.883Z" transform="translate(-46.818)" fill="#fdc14e"/>
+      <path id="Trazado_285" data-name="Trazado 285" d="M1271.283,592h-2.815a1.658,1.658,0,0,0-1.655,1.767l.994,15.213a1.659,1.659,0,0,0,1.655,1.541h1.822a1.659,1.659,0,0,0,1.658-1.659v-15.2A1.659,1.659,0,0,0,1271.283,592Zm-.992,16.309a1.244,1.244,0,1,1,1.244-1.244A1.244,1.244,0,0,1,1270.291,608.309Z" transform="translate(0 -62.23)" fill="#fdc14e"/>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="172" height="92" viewBox="0 0 172 92">
+  <defs>
+    <radialGradient id="radial-gradient" cx="98.262" cy="39.599" r="117.555" gradientTransform="translate(0.006 0.005)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset="0.31" stop-color="#fcfcfc"/>
+      <stop offset="0.45" stop-color="#f5f5f5"/>
+      <stop offset="0.556" stop-color="#e8e8e8"/>
+      <stop offset="0.645" stop-color="#d6d6d6"/>
+      <stop offset="0.723" stop-color="#bfbfbf"/>
+      <stop offset="0.794" stop-color="#a2a2a2"/>
+      <stop offset="0.859" stop-color="#7f7f7f"/>
+      <stop offset="0.919" stop-color="#575757"/>
+      <stop offset="0.974" stop-color="#2b2b2b"/>
+      <stop offset="1" stop-color="#141414"/>
+    </radialGradient>
+    <clipPath id="clip-bmw-logo-surveyhoney">
+      <rect width="172" height="92"/>
+    </clipPath>
+  </defs>
+  <g id="bmw-logo-surveyhoney" clip-path="url(#clip-bmw-logo-surveyhoney)">
+    <g id="Grupo_218" data-name="Grupo 218" transform="translate(-35.755 -3.553)">
+      <g id="Grupo_38" data-name="Grupo 38" transform="translate(87.755 15.553)">
+        <path id="Trazado_194" data-name="Trazado 194" d="M122.2,15.553A34.443,34.443,0,1,0,156.643,50,34.444,34.444,0,0,0,122.2,15.553Zm0,67.164A32.721,32.721,0,1,1,154.92,50,32.719,32.719,0,0,1,122.2,82.717Z" transform="translate(-87.755 -15.553)" fill="#a7aefa"/>
+        <path id="Trazado_196" data-name="Trazado 196" d="M159.1,54.17a32.721,32.721,0,1,1-32.721-32.721A32.721,32.721,0,0,1,159.1,54.17Z" transform="translate(-91.934 -19.727)" fill="#737efa"/>
+        <path id="Trazado_197" data-name="Trazado 197" d="M174.455,80.313a21.937,21.937,0,1,1-21.937-21.937A21.937,21.937,0,0,1,174.455,80.313Z" transform="translate(-118.074 -45.87)" fill="#fff"/>
+        <g id="Grupo_37" data-name="Grupo 37" transform="translate(7.623 2.929)">
+          <g id="Grupo_35" data-name="Grupo 35" transform="translate(21.816)">
+            <path id="Trazado_201" data-name="Trazado 201" d="M194.464,34.233l2.279-6.04v6.04h1.731v-8.65h-2.6l-2.366,6.193h.022l-2.366-6.193h-2.6v8.65h1.731v-6.04l2.279,6.04Z" transform="translate(-188.562 -25.583)" fill="#fff"/>
+          </g>
+          <g id="Grupo_36" data-name="Grupo 36" transform="translate(42.24 7.124)">
+            <path id="Trazado_202" data-name="Trazado 202" d="M267.726,55.135l-2.956,4.312,4.644-2.285,1.259,1.511-7.309,3.67-1.477-1.789,2.834-4.272-.017-.022-4.715,2.018L258.5,56.5l4.929-6.526,1.26,1.511L261.6,55.643l4.775-2.13Z" transform="translate(-258.497 -49.976)" fill="#fff"/>
+          </g>
+          <path id="Trazado_203" data-name="Trazado 203" d="M125.049,55.7a2.205,2.205,0,0,0-2.78-.254,1.926,1.926,0,0,0,.011-1.291,3.06,3.06,0,0,0-.946-1.194c-1.162-.974-2.382-.142-3.254.9l-4.223,5.03,6.636,5.567,4.451-5.3C125.96,57.937,126.118,56.736,125.049,55.7Zm-8.584,2.426L119,55.1a1.033,1.033,0,0,1,1.385.022.909.909,0,0,1,.154,1.328l-2.506,2.987Zm7,.5-2.643,3.15-1.658-1.391,2.664-3.175a1.086,1.086,0,0,1,1.637,1.416Z" transform="translate(-113.857 -44.657)" fill="url(#radial-gradient)"/>
+        </g>
+      </g>
+      <g id="Grupo_40" data-name="Grupo 40" transform="translate(100.992 28.789)">
+        <path id="Trazado_205" data-name="Trazado 205" d="M135.169,83.561a20.6,20.6,0,1,1,20.6,20.6A20.6,20.6,0,0,1,135.169,83.561Z" transform="translate(-134.559 -62.353)" fill="#fff"/>
+        <g id="Grupo_39" data-name="Grupo 39" transform="translate(0.578 0.578)">
+          <path id="Trazado_206" data-name="Trazado 206" d="M135.059,83.484h20.629V62.855A20.629,20.629,0,0,0,135.059,83.484Z" transform="translate(-135.059 -62.855)" fill="#737efa"/>
+          <path id="Trazado_207" data-name="Trazado 207" d="M205.7,133.495v20.63a20.63,20.63,0,0,0,20.63-20.63Z" transform="translate(-185.07 -112.866)" fill="#737efa"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

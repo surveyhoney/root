@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+
+<head>
+    <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+</head>
+
+<body>
+    <script>
+        function getCookie(name) {
+            var cookies = document.cookie.split(";"),
+                toReturn;
+
+            for (var i = 0; i < cookies.length; i++) {
+                var cookie = cookies[i].trim();
+                if (cookie.indexOf(name + "=") === 0) {
+                    toReturn = cookie.substring((name + "=").length, cookie.length);
+                }
+            }
+
+            return toReturn;
+        }
+
+        (function() {
+            var loginTracker = getCookie("loginTracker");
+
+            query = window.location.href.split('?')[1];
+            login_url = "https://app.surveyhoney.com/";
+            lp_url = "https://lp.surveyhoney.com/lp1"
+            if (typeof query != "undefined") {
+                login_url += '?' + query;
+                lp_url += '?' + query;
+            }
+
+            if (typeof loginTracker === "undefined") {
+                window.location.replace(lp_url);
+            } else {
+                window.location.replace(login_url);
+            }
+
+        })();
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<!--  This site was created in Webflow. http://www.webflow.com  -->
+<!--  Last Published: Tue Nov 05 2019 07:26:56 GMT+0000 (UTC)  -->
+<html data-wf-page="5d63af4118659f38ed08e10b" data-wf-site="5d551e724d608affcd2cf0c1">
+<head>
+  <meta charset="utf-8">
+  <title>Atoms — SurveyHoney Design System</title>
+  <meta content="Atoms — SurveyHoney Design System" property="og:title">
+  <meta content="width=device-width, initial-scale=1" name="viewport">
+  <meta content="Webflow" name="generator">
+  <link href="../css/normalize.css" rel="stylesheet" type="text/css">
+  <link href="../css/webflow.css" rel="stylesheet" type="text/css">
+  <link href="../css/sweethoney.webflow.css" rel="stylesheet" type="text/css">
+  <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js" type="text/javascript"></script>
+  <script type="text/javascript">WebFont.load({  google: {    families: ["Inconsolata:400,700","Noto Serif:regular,italic"]  }});</script>
+  <script src="https://use.typekit.net/jqn4bqv.js" type="text/javascript"></script>
+  <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+  <!-- [if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js" type="text/javascript"></script><![endif] -->
+  <script type="text/javascript">!function(o,c){var n=c.documentElement,t=" w-mod-";n.className+=t+"js",("ontouchstart"in o||o.DocumentTouch&&c instanceof DocumentTouch)&&(n.className+=t+"touch")}(window,document);</script>
+  <link href="../images/favicon.png" rel="shortcut icon" type="image/x-icon">
+  <link href="../images/webclip.png" rel="apple-touch-icon">
+  <style>
+  body {
+    text-rendering: geometricPrecision;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+  html { opacity: 0; transition: opacity 0s ease-out; }
+  html.webflow-loaded { opacity: 1; }
+</style>
+  <script>
+var Webflow = Webflow || [];
+Webflow.push(function() { $('html').addClass('webflow-loaded') });
+</script>
+</head>
+<body class="body">
+  <div class="css w-embed">
+    <style>
+/** SVG MASKS **/
+.content-mask__content {
+	clip-path: url(#content-mask);
+  -webkit-clip-path: url(#content-mask);
+}
+.honeycomb {
+	clip-path: url(#steps-mask);
+  -webkit-clip-path: url(#steps-mask);
+}
+.hex-slider__slide, .hex-slider__mask {
+	clip-path: url(#slide-mask);
+  -webkit-clip-path: url(#slide-mask);
+}
+/** HERO HEADING: NO LINE BREAK IN "GET PAID" **/
+.nowrap {
+white-space: nowrap;
+}
+/** HEXAGON BUTTON HOVER **/
+#outline-button {
+	transition: stroke .3s ease;
+}
+.special-button:hover .special__button__text{
+  color: #f46818;
+}
+.special-button:hover #outline-button {
+	stroke: #f46818;
+}
+.w-slider-nav.w-round>div {
+    border-radius: 4px;
+}
+/** SLIDER BULLETS **/
+.w-slider-dot {
+	width: 8px;
+  height: 8px;
+	background-color: #F89A30;  
+  border-radius: 4px;
+  transition: width 800ms ease;
+  margin: 0 2px;
+}
+.w-slider-dot.w-active {
+	width: 32px;
+  background-color: #F89A30;  
+  border-radius: 4px;
+}
+</style>
+  </div>
+  <div class="svgdefs w-embed"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <symbol>
+    <path id="hexagon" d="M184.61023,25.49413a8.787,8.787,0,0,1,6.322,6.108l28.728,100.387a8.787,8.787,0,0,1-2.124,8.518l-72.494,75.149a8.787,8.787,0,0,1-8.45,2.425l-101.2-25.233a8.788,8.788,0,0,1-6.322-6.108L.33922,86.35413a8.787,8.787,0,0,1,2.124-8.518l72.494-75.15a8.787,8.787,0,0,1,8.449-2.425Z"></path>
+  	<path id="logo" d="M30.60013,60.54694a5.01194,5.01194,0,0,1-2.062-9.421h0A12.75348,12.75348,0,0,0,33.999,33.763h0a7.07314,7.07314,0,0,1-.34082-5.035c.05811-.142.80811-1.793-.5249-2.309a30.81286,30.81286,0,0,0-10.37109-1.559,29.19966,29.19966,0,0,0-10.37012,1.559c-1.32007.564-.583,2.167-.52588,2.309a7.0789,7.0789,0,0,1-.33984,5.035h0a12.75406,12.75406,0,0,0,5.46,17.363h0a5.01351,5.01351,0,1,1-5.012,8.679h0a22.7566,22.7566,0,0,1-8.62427-31.925,73.52033,73.52033,0,0,0,8.3999-19.25,7.92567,7.92567,0,0,0-.262-4.963,2.68609,2.68609,0,0,1,4.60009-2.656l1.00489,1.258a1.39987,1.39987,0,0,0,1.29.519,32.50021,32.50021,0,0,1,4.46411-.318,31.69841,31.69841,0,0,1,4.46.322,1.39986,1.39986,0,0,0,1.28808-.516l1.011-1.266a2.68609,2.68609,0,0,1,4.6001,2.656l-.1001.266a7.91349,7.91349,0,0,0-.2561,4.988,73.37478,73.37478,0,0,0,8.314,18.952,22.76946,22.76946,0,0,1-8.60791,31.936h0a4.99206,4.99206,0,0,1-2.64111.751Q30.75283,60.55695,30.60013,60.54694Zm-12.8-47.43c-.574,2.745,3.6709,4.875,5.052,4.875s5.627-2.13,5.053-4.875c-.84595-4.042-3.438-6.639-5.053-6.639S18.637,9.075,17.792,13.11694Zm192.928,32.138,4.55908-8.305-6.186-11.3h4.821l3.65893,7.027,3.572-7.027h4.70507l-10.427,19.6Zm-81.63208,0,4.55908-8.305-6.186-11.3h4.821l3.65893,7.027,3.572-7.027h4.70507l-10.427,19.6Zm-103.9751-4.1c.023-2.044,1.771-3.943-.158-10.652a.947.947,0,0,0-.927-.683H23.804a1.564,1.564,0,0,0-1.5,1.225c-.80909,3.645.46289,4.394.46289,6.129,0,1.364-2.33912,1.073-2.31812-.558.03589-2.792,1.61011-5.065-.085-6.482-1.38208-1.154-2.16992.534-3.06909.644-1.166.143.31592-1.717-3.26709-2.111a.67289.67289,0,0,1-.635-.625c0-.989,3.80908-1.7,9.374-1.7s9.551.713,9.551,1.7c0,.546-.8501,1.035-3.02,1.363a1.26705,1.26705,0,0,0-.564.234c-3.83691,2.871-.647,9.949-1.32593,12.658-.17407.693-.53295.991-.916.991-.66773.005-1.3916-.869-1.37964-2.133Zm172.13208-3.973a6.957,6.957,0,0,1-1.94605-4.995,7.37244,7.37244,0,0,1,1.9751-5.11,7.66554,7.66554,0,0,1,10.10718.088,7.3863,7.3863,0,0,1,1.83008,5.256v.436h-9.6709a3.53727,3.53727,0,0,0,.78394,2.207,2.81009,2.81009,0,0,0,2.14892.814,3.44023,3.44023,0,0,0,1.68506-.378,2.53428,2.53428,0,0,0,.8999-1.075l3.95.407a5.78843,5.78843,0,0,1-2.5,3.252,7.69229,7.69229,0,0,1-4.10009.959,6.70612,6.70612,0,0,1-5.17212-1.861Zm3.165-8.218a2.90049,2.90049,0,0,0-.72608,1.394H205.356a3.28692,3.28692,0,0,0-.842-1.51,3.08217,3.08217,0,0,0-4.104.116Zm-34.5,7.986a6.94215,6.94215,0,0,1,0-9.64,8.7155,8.7155,0,0,1,11.32715,0,6.94218,6.94218,0,0,1,0,9.64,8.72647,8.72647,0,0,1-11.33521,0Zm3.311-7.259a3.58375,3.58375,0,0,0,0,4.878,3.22075,3.22075,0,0,0,2.38208.93,3.17475,3.17475,0,0,0,2.324-.93,3.58372,3.58372,0,0,0,0-4.878,3.45192,3.45192,0,0,0-4.71411,0Zm-53.376,7.492a6.95693,6.95693,0,0,1-1.946-4.995,7.37024,7.37024,0,0,1,1.97608-5.11,7.66425,7.66425,0,0,1,10.1062.088,7.38628,7.38628,0,0,1,1.83008,5.256v.436h-9.6709a3.53785,3.53785,0,0,0,.78491,2.207,2.805,2.805,0,0,0,2.14795.814,3.4411,3.4411,0,0,0,1.68506-.378,2.53473,2.53473,0,0,0,.8999-1.075l3.949.407a5.78846,5.78846,0,0,1-2.5,3.252,7.69252,7.69252,0,0,1-4.095.959,6.70724,6.70724,0,0,1-5.17529-1.862Zm3.165-8.218a2.89979,2.89979,0,0,0-.7251,1.394h5.66308a3.29194,3.29194,0,0,0-.842-1.51,3.08356,3.08356,0,0,0-4.104.115ZM75.458,37.35692a4.96043,4.96043,0,0,1-1.4231-3.892v-7.811h4.18189v7.143a2.72348,2.72348,0,0,0,.72607,2.091,2.46107,2.46107,0,0,0,1.74194.61,2.59116,2.59116,0,0,0,1.771-.61,2.81659,2.81659,0,0,0,.7-2.091v-7.143H87.3367v7.55a5.2005,5.2005,0,0,1-1.4519,4.153,7.35812,7.35812,0,0,1-5.2,1.684A7.347,7.347,0,0,1,75.45,37.357Zm-14.02588.871a12.33406,12.33406,0,0,1-2.846-2.12l2.324-3.194a11.81193,11.81193,0,0,0,1.8,1.481,4.50023,4.50023,0,0,0,2.43994.7,3.10027,3.10027,0,0,0,2.033-.668,2.00717,2.00717,0,0,0,.7-1.568,1.70774,1.70774,0,0,0-.66895-1.394,9.47115,9.47115,0,0,0-2.26489-1.075l-1.6001-.552a6.52714,6.52714,0,0,1-2.7-1.539,4.758,4.758,0,0,1-1.16089-3.369,5.9501,5.9501,0,0,1,1.68408-4.355,6.239,6.239,0,0,1,4.792-1.772,9.3614,9.3614,0,0,1,5.75,1.917l-2,3.252a4.7213,4.7213,0,0,0-3.25293-1.393,2.4212,2.4212,0,0,0-1.887.668,1.72858,1.72858,0,0,0-.49389,1.22,1.35963,1.35963,0,0,0,.436,1.075,7.77373,7.77373,0,0,0,2.43994,1.1l1.45191.552a7.7749,7.7749,0,0,1,2.64209,1.48,4.82968,4.82968,0,0,1,1.42309,3.6,6.93955,6.93955,0,0,1-1.71289,4.791,7.5058,7.5058,0,0,1-5.489,1.975,8.218,8.218,0,0,1-3.84766-.812Zm128.24194.377v-6.649a3.58936,3.58936,0,0,0-.7-2.585,2.193,2.193,0,0,0-1.6001-.581,2.27391,2.27391,0,0,0-1.74194.7,3.3157,3.3157,0,0,0-.813,2.469v6.649h-4.18091v-12.951h4.18091v1.539a4.731,4.731,0,0,1,4.009-1.887,5.10013,5.10013,0,0,1,3.717,1.307,5.073,5.073,0,0,1,1.30688,3.8v8.188Zm-32.11792,0v-8.218h-7.7251v8.218h-4.4729v-19.369h4.4729v7.376h7.7251v-7.376h4.4729V38.601Zm-52.273,0-6.46508-12.757-.21412,3.61a3.94376,3.94376,0,0,0-1.887-.465,2.728,2.728,0,0,0-2.09106.871,4.91673,4.91673,0,0,0-1.01709,3.485v5.256H89.427v-12.951h4.18189v2.032a4.6576,4.6576,0,0,1,1.626-1.8,4.00879,4.00879,0,0,1,2.23706-.552,4.18665,4.18665,0,0,1,1.365.2l-.00708.116h4.478l3.281,6.94,3.282-6.94h4.58789l-6.564,12.951Zm-84.40991-27.991c0-.575.887-.79,1.98-.79s1.98.215,1.98.79-.887,1.293-1.98,1.293-1.98926-.717-1.98926-1.293Z"></path>
+  </symbol>
+  <defs>
+    <lineargradient id="gradient" x1="0.45" y1="0.775" x2="0.303" y2="0.21" gradientunits="objectBoundingBox">
+      <stop offset="0" stop-color="#f46818"></stop>
+      <stop offset="1" stop-color="#fdc14e"></stop>
+    </lineargradient>
+    <clippath id="steps-mask">
+    	<use xlink:href="#hexagon" transform="scale(4.82) translate(-18 -30)"></use>
+    </clippath>
+		<clippath id="slide-mask">
+    	<use xlink:href="#hexagon" transform="scale(3.25) translate(-18 34) rotate(-14)"></use>
+    </clippath>
+    <clippath id="content-mask">
+    	<use xlink:href="#hexagon" transform="scale(1.71)"></use>
+    </clippath>
+</defs>
+</svg></div>
+  <div class="navbar">
+    <div class="brand">
+      <div class="svg w-embed"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="198" height="53">
+	<use xlink:href="#logo" fill="#F46818" transform="scale(.87)"></use> 
+</svg></div>
+    </div>
+    <div class="navbar__menu">
+      <div class="navbar__menu__label">
+        <div>Design System</div>
+      </div>
+      <div class="navbar__menu__links">
+        <a href="../foundations/particles.html" class="navbar__link w-inline-block">
+          <div class="navbar__link__text">particles<span class="navbar__link__text__superscript">01</span></div>
+        </a>
+        <a href="../foundations/atoms.html" class="navbar__link w-inline-block w--current">
+          <div class="navbar__link__text">Atoms <span class="navbar__link__text__superscript">02</span></div>
+        </a>
+        <a href="../foundations/molecules.html" class="navbar__link w-inline-block">
+          <div class="navbar__link__text">molecules<span class="navbar__link__text__superscript">03</span></div>
+        </a>
+        <a href="../foundations/organisms.html" class="navbar__link w-inline-block">
+          <div class="navbar__link__text">organisms<span class="navbar__link__text__superscript">04</span></div>
+        </a>
+      </div>
+    </div>
+    <div class="navbar__button">
+      <div data-w-id="5539b635-b5cc-f9b8-57fd-36b2c4c2c63a" class="navbar__button__icon">
+        <div class="navbar__button__topline">
+          <div class="navbar__button__line"></div>
+        </div>
+        <div class="navbar__button__midline">
+          <div class="navbar__button__line"></div>
+        </div>
+        <div class="navbar__button__bottomline">
+          <div class="navbar__button__line bottom"></div>
+        </div>
+      </div>
+      <div class="navbar__button__unclick"></div>
+    </div>
+  </div>
+  <div class="site">
+    <div class="styles">
+      <div class="styles__section">
+        <div class="styles__header">
+          <div class="container">
+            <div class="styles__title">Text</div>
+          </div>
+        </div>
+        <div class="styles___content">
+          <div class="container">
+            <div class="styles__content__subsection">
+              <div class="styles__title styles__title--subsection">hero Message</div>
+              <div class="styles__content__subsection__division">
+                <div class="styles__subsection__color styles__subsection__color--orange">
+                  <div class="hero-message">
+                    <div class="hero-message__heading">
+                      <h1 class="h1">Take Surveys. Get <span class="text-shadow--white">Paid</span>.</h1>
+                    </div>
+                    <div class="hero-message__text">
+                      <div class="big-text">Sign up to earn <strong>$3</strong> in your first 3 minutes</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div>
+              <div class="styles__title styles__title--subsection">Text shadows</div>
+              <div class="styles__content__subsection__division">
+                <h2 class="h2 color--purple"><span class="text-shadow--purple">Advanced features</span> put you in control</h2>
+              </div>
+              <div class="styles__content__subsection__division">
+                <h2 class="h2 color--orange"><span class="text-shadow--orange">Advanced features</span> put you in control</h2>
+              </div>
+              <div class="styles__content__subsection__division">
+                <div class="styles__subsection__color styles__subsection__color--orange">
+                  <h2 class="h2 color--white"><span class="text-shadow--white">Advanced features</span> put you in control</h2>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="styles__section">
+        <div class="styles__header">
+          <div class="container">
+            <div class="styles__title">Buttons</div>
+          </div>
+        </div>
+        <div class="styles___content">
+          <div class="container">
+            <div class="styles__content__subsection">
+              <div class="styles__title styles__title--subsection">Main Button</div>
+              <div class="button-wrapper">
+                <a data-w-id="510c5ed2-cc94-a1a2-e617-578cc86049b7" href="#" class="button w-inline-block">
+                  <div style="-webkit-transform:translate3d(-100%, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(-100%, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(-100%, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(-100%, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" class="button__bg"></div>
+                  <div class="button__body">
+                    <div class="button__text"><img src="../images/arrow-ico-surveyhoney.svg" style="opacity:0;-webkit-transform:translate3d(-64PX, -50%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(-64PX, -50%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(-64PX, -50%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(-64PX, -50%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" alt="" class="button__arrow--left">
+                      <div class="button__text__text">Start earning now</div>
+                    </div><img src="../images/arrow-ico-surveyhoney.svg" alt="" class="button__arrow--right"></div>
+                </a>
+              </div>
+            </div>
+            <div class="styles__content__subsection">
+              <div class="styles__title styles__title--subsection">Secondary button</div>
+              <div class="styles__subsection__color styles__subsection__color--orange">
+                <div class="button-wrapper">
+                  <a data-w-id="1506e65c-7415-1452-2bf8-6b1695fd42cb" href="#" class="button button--seconday w-inline-block">
+                    <div class="button__bg button__bg__orange"></div>
+                    <div class="button__body"><img src="../images/fb-ico-surveyhoney.svg" alt="" class="button__icon">
+                      <div class="button__text">
+                        <div class="button__text__text">Start earning now</div>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div>
+              <div class="styles__title styles__title--subsection">special button</div>
+              <div class="special-button">
+                <div class="cssinstructions w-embed">
+                  <style>
+#outline-button {
+	transition: stroke .3s ease;
+}
+.special-button:hover .special__button__text{
+  color: #f46818;
+}
+.special-button:hover #outline-button {
+	stroke: #f46818;
+}
+</style>
+                </div>
+                <div data-w-id="afbd6382-244e-159e-4b9e-6cda88001482" class="hex-button">
+                  <div class="svg w-embed"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewbox="0 0 222 220" preserveaspectratio="xMinYMin meet">
+  	<use id="outline-button" xlink:href="#hexagon" fill="white" stroke="#4E5BF9" stroke-width="2" transform="translate (1,1)"></use>
+</svg></div>
+                </div><a href="#" class="special__button__text">Tell me How it works</a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="styles__section">
+        <div class="styles__header">
+          <div class="container">
+            <div class="styles__title">Testimonial</div>
+          </div>
+        </div>
+        <div class="styles___content">
+          <div class="container">
+            <div class="styles__content__subsection">
+              <div class="styles__title styles__title--subsection">Profile</div>
+              <div class="testimonial-pic">
+                <div class="testimonial-pic__gradient">
+                  <div class="hex-profile">
+                    <div class="svg w-embed"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewbox="0 0 220 221" preserveaspectratio="xMinYMin meet">
+  <use xlink:href="#hexagon" fill="url(#gradient)"></use>
+</svg></div>
+                  </div>
+                </div>
+                <div class="testimonial-pic__img"><img src="../images/profile-01-surveyhoney2x-min.png" width="180" alt=""></div>
+              </div>
+            </div>
+            <div>
+              <div class="styles__title styles__title--subsection">Quote</div>
+              <div class="testimonial-quote">
+                <div class="testimonial-quote__outline">
+                  <div class="hex-testimonial">
+                    <div class="svg w-embed"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewbox="0 0 222 220" preserveaspectratio="xMinYMin meet">
+  <use xlink:href="#hexagon" fill="none" stroke="#4E5BF9" stroke-width=".75" transform="translate (1,1)"></use>
+</svg></div>
+                    <div data-w-id="f9804f67-239e-1393-4115-8420d13064cb" data-animation-type="lottie" data-src="https://uploads-ssl.webflow.com/5d551e724d608affcd2cf0c1/5d64f6979093d7528ac4dde4_hexagon-outline.json" data-loop="0" data-direction="1" data-autoplay="0" data-is-ix2-target="1" data-renderer="svg" data-duration="0" data-ix2-initial-state="0" class="hex-lottie"></div>
+                  </div>
+                </div>
+                <div class="testimonial-quote__body">
+                  <div class="testimonial-quote__body__main">
+                    <blockquote class="quote">The app is a great way to earn some quick cash. The interface is easy and the SurveyHoney team has been responsive!</blockquote>
+                  </div>
+                  <div class="testimonial-quote__body__author">
+                    <div class="author">Lindsay</div>
+                  </div>
+                  <div class="testimonial-quote__body__role">
+                    <div class="role">SurveyHoney Member</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="styles__section">
+        <div class="styles__header">
+          <div class="container">
+            <div class="styles__title">Icons</div>
+          </div>
+        </div>
+        <div class="styles___content">
+          <div class="container">
+            <div class="styles__content__subsection">
+              <div class="styles__title styles__title--subsection">feedback</div>
+              <div class="styles__subsection__color styles__subsection__color--purple">
+                <div class="styles__content__subsection__division">
+                  <div class="feedback">
+                    <div class="feedback__item"><img src="../images/heart-ico-surveyhoney.svg" alt=""></div>
+                    <div class="feedback__item"><img src="../images/heart-ico-surveyhoney.svg" alt=""></div>
+                    <div class="feedback__item"><img src="../images/heart-ico-surveyhoney.svg" alt=""></div>
+                    <div class="feedback__item"><img src="../images/heart-ico-surveyhoney.svg" alt=""></div>
+                    <div class="feedback__item"><img src="../images/heart-half-ico-surveyhoney.svg" alt=""></div>
+                  </div>
+                </div>
+                <div class="styles__content__subsection__division">
+                  <div class="feedback">
+                    <div class="feedback__item"><img src="../images/thumbs-ico-surveyhoney.svg" alt=""></div>
+                    <div class="feedback__item"><img src="../images/thumbs-ico-surveyhoney.svg" alt=""></div>
+                    <div class="feedback__item"><img src="../images/thumbs-ico-surveyhoney.svg" alt=""></div>
+                    <div class="feedback__item"><img src="../images/thumbs-ico-surveyhoney.svg" alt=""></div>
+                    <div class="feedback__item"><img src="../images/thumbs-half-ico-surveyhoney.svg" alt=""></div>
+                  </div>
+                </div>
+                <div>
+                  <div class="feedback">
+                    <div class="feedback__item">
+                      <div class="price">$15</div>
+                    </div>
+                    <div class="feedback__item">
+                      <div class="price">$20</div>
+                    </div>
+                    <div class="feedback__item">
+                      <div class="price">$25</div>
+                    </div>
+                    <div class="feedback__item">
+                      <div class="price price--active">$30</div>
+                    </div>
+                    <div class="feedback__item">
+                      <div class="price">$35</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="styles__content__subsection">
+              <div class="styles__title styles__title--subsection">Mini hexagon</div>
+              <div class="mini-hex">
+                <div class="mini-hex__hexagon">
+                  <div class="hex-small-icon">
+                    <div class="svg w-embed"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewbox="0 0 220 218" preserveaspectratio="xMinYMin meet">
+  <use xlink:href="#hexagon" fill="#4E5BF9"></use>
+</svg></div>
+                  </div>
+                </div>
+                <div class="mini-hex__icon"><img src="../images/billsmall-ico-surveyhoney.svg" alt=""></div>
+              </div>
+            </div>
+            <div>
+              <div class="styles__title styles__title--subsection">blue hexagon</div>
+              <div class="step-icon">
+                <div class="step-icon__hexagon">
+                  <div class="hex-shadow">
+                    <div class="hexagon__shadow">
+                      <div class="shadowsvg">
+                        <div class="svg w-embed"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewbox="0 0 220 218" preserveaspectratio="xMinYMin meet">
+  <use xlink:href="#hexagon" fill="rgba(34, 31, 62, 0.32)"></use>
+</svg></div>
+                      </div>
+                    </div>
+                    <div class="hex-shadow__shape">
+                      <div class="hex-icon">
+                        <div class="svg w-embed"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewbox="0 0 220 218" preserveaspectratio="xMinYMin meet">
+  <use xlink:href="#hexagon" fill="#4E5BF9"></use>
+</svg></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="step-icon__icon"><img src="../images/profile-ico-surveyhoney.svg" alt="" class="step-icon__icon__img"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="styles__section">
+        <div class="styles__header">
+          <div class="container">
+            <div class="styles__title">Content hexagon</div>
+          </div>
+        </div>
+        <div class="styles___content">
+          <div class="container">
+            <div class="content-mask">
+              <div class="hexagon__shadow">
+                <div class="shadowsvg">
+                  <div class="svg w-embed"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewbox="0 0 220 218" preserveaspectratio="xMinYMin meet">
+  <use xlink:href="#hexagon" fill="rgba(34, 31, 62, 0.32)"></use>
+</svg></div>
+                </div>
+              </div>
+              <div class="hex-shadow__shape">
+                <div class="hex-content">
+                  <div class="svg w-embed"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewbox="0 0 220 218" preserveaspectratio="xMinYMin meet">
+  <use xlink:href="#hexagon" fill="white"></use>
+</svg></div>
+                </div>
+                <div class="content-mask__content">
+                  <div class="hexagon__content__body">
+                    <div class="hexagon__content__title">
+                      <h3 class="h3">Share your opinions</h3>
+                    </div>
+                    <div class="hexagon__content__text">
+                      <p>Earn points for every survey you complete.</p>
+                    </div>
+                    <div class="hexagon__number">
+                      <div class="number">3</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="styles__section">
+        <div class="styles__header">
+          <div class="container">
+            <div class="styles__title">Input fields</div>
+          </div>
+        </div>
+        <div class="styles___content">
+          <div class="container">
+            <div>
+              <div class="styles__subsection__color styles__subsection__color--orange">
+                <div class="row w-row">
+                  <div class="col w-col w-col-6 w-col-stack">
+                    <div class="w-form">
+                      <form id="email-form" name="email-form" data-name="Email Form">
+                        <div class="form__fields">
+                          <div class="form__input-field"><input type="email" class="input-field w-input" maxlength="256" name="Email" data-name="Email" placeholder="Email" id="Email"><img src="../images/mail-ico-surveyhoney.svg" alt="" class="input-field__icon"></div>
+                        </div>
+                      </form>
+                      <div class="w-form-done">
+                        <div>Thank you! Your submission has been received!</div>
+                      </div>
+                      <div class="w-form-fail">
+                        <div>Oops! Something went wrong while submitting the form.</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col w-col w-col-6 w-col-stack"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="styles__section">
+        <div class="styles__header">
+          <div class="container">
+            <div class="styles__title">Sliders</div>
+          </div>
+        </div>
+        <div class="styles___content">
+          <div class="container">
+            <div class="styles__content__subsection">
+              <div class="styles__title styles__title--subsection">Hero main slider</div>
+              <div class="hex-slider">
+                <div class="hex-slider__size">
+                  <div data-delay="6000" data-animation="over" data-autoplay="1" data-disable-swipe="1" data-duration="1000" data-infinite="1" class="hex-slider__slider w-slider">
+                    <div class="hex-slider__mask w-slider-mask">
+                      <div class="hex-slider__slide w-slide">
+                        <div class="hex-slider__image hex-slide__image--car"></div>
+                        <div class="hero__user-feedback">
+                          <div class="hero__user-feedback__item">
+                            <div class="user-feedback">
+                              <div class="user-feedback__body">
+                                <div class="user-feedback__avatar"><img src="../images/hero-profile-01-surveyhoney2x-min.png" width="82" alt=""></div>
+                                <div class="user-feedback__content">
+                                  <div class="user-feedback__content__heading">
+                                    <div class="label">Rate this car’s style:</div>
+                                  </div>
+                                  <div class="user-feedback__content__icons">
+                                    <div class="feedback">
+                                      <div class="feedback__item feedback__item01"><img src="../images/heart-ico-surveyhoney.svg" alt=""></div>
+                                      <div class="feedback__item feedback__item02"><img src="../images/heart-ico-surveyhoney.svg" alt=""></div>
+                                      <div class="feedback__item feedback__item03"><img src="../images/heart-ico-surveyhoney.svg" alt=""></div>
+                                      <div class="feedback__item feedback__item04"><img src="../images/heart-ico-surveyhoney.svg" alt=""></div>
+                                      <div class="feedback__item feedback__item05"><img src="../images/heart-half-ico-surveyhoney.svg" alt=""></div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="hex-slider__slide w-slide">
+                        <div class="hex-slider__image hex-slide__image--shoe"></div>
+                        <div class="hero__user-feedback">
+                          <div class="hero__user-feedback__item">
+                            <div class="user-feedback">
+                              <div class="user-feedback__body">
+                                <div class="user-feedback__avatar"><img src="../images/hero-profile-02-surveyhoney2x-min.png" width="82" alt=""></div>
+                                <div class="user-feedback__content">
+                                  <div class="user-feedback__content__heading">
+                                    <div class="label">How appealing is this shoe style?</div>
+                                  </div>
+                                  <div class="user-feedback__content__icons">
+                                    <div class="feedback">
+                                      <div class="feedback__item feedback__item01"><img src="../images/thumbs-ico-surveyhoney.svg" alt=""></div>
+                                      <div class="feedback__item feedback__item02"><img src="../images/thumbs-ico-surveyhoney.svg" alt=""></div>
+                                      <div class="feedback__item feedback__item03"><img src="../images/thumbs-ico-surveyhoney.svg" alt=""></div>
+                                      <div class="feedback__item feedback__item04"><img src="../images/thumbs-ico-surveyhoney.svg" alt=""></div>
+                                      <div class="feedback__item feedback__item05"><img src="../images/thumbs-half-ico-surveyhoney.svg" alt=""></div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="hex-slider__slide w-slide">
+                        <div class="hex-slider__image hex-slide__image--dog"></div>
+                        <div class="hero__user-feedback">
+                          <div class="hero__user-feedback__item">
+                            <div class="user-feedback">
+                              <div class="user-feedback__body">
+                                <div class="user-feedback__avatar"><img src="../images/hero-profile-03-surveyhoney2x-min.png" width="82" alt=""></div>
+                                <div class="user-feedback__content">
+                                  <div class="user-feedback__content__heading">
+                                    <div class="label">What’s the right price for this leash?</div>
+                                  </div>
+                                  <div class="user-feedback__content__icons">
+                                    <div class="feedback">
+                                      <div class="feedback__item feedback__item01">
+                                        <div class="price">$15</div>
+                                      </div>
+                                      <div class="feedback__item feedback__item02">
+                                        <div class="price">$20</div>
+                                      </div>
+                                      <div class="feedback__item feedback__item03">
+                                        <div class="price">$25</div>
+                                      </div>
+                                      <div class="feedback__item feedback__item04">
+                                        <div class="price price--active">$30</div>
+                                      </div>
+                                      <div class="feedback__item feedback__item05">
+                                        <div class="price">$35</div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="hex-slider__hide w-slider-arrow-left">
+                      <div class="w-icon-slider-left"></div>
+                    </div>
+                    <div class="hex-slider__hide w-slider-arrow-right">
+                      <div class="w-icon-slider-right"></div>
+                    </div>
+                    <div class="hex-slider__nav w-slider-nav w-round"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="styles__content__subsection">
+              <div class="styles__title styles__title--subsection">Hero medium slider</div>
+              <div class="hex-slider hex-slider--medium">
+                <div class="hex-slider__size">
+                  <div data-delay="6000" data-animation="over" data-autoplay="1" data-duration="1400" data-infinite="1" class="hex-slider__slider w-slider">
+                    <div class="hex-slider__mask w-slider-mask">
+                      <div class="hex-slider__slide w-slide">
+                        <div class="hex-slider__foreground hex-slider__foreground--orange"></div>
+                        <div class="hex-slider__image hex-slide__image--dog"></div>
+                      </div>
+                      <div class="hex-slider__slide w-slide">
+                        <div class="hex-slider__foreground hex-slider__foreground--orange"></div>
+                        <div class="hex-slider__image hex-slide__image--car"></div>
+                      </div>
+                      <div class="hex-slider__slide w-slide">
+                        <div class="hex-slider__foreground hex-slider__foreground--orange"></div>
+                        <div class="hex-slider__image hex-slide__image--shoe"></div>
+                      </div>
+                    </div>
+                    <div class="hex-slider__hide w-slider-arrow-left">
+                      <div class="w-icon-slider-left"></div>
+                    </div>
+                    <div class="hex-slider__hide w-slider-arrow-right">
+                      <div class="w-icon-slider-right"></div>
+                    </div>
+                    <div class="hex-slider__hide w-slider-nav w-round"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div>
+              <div class="styles__title styles__title--subsection">Hero small slider</div>
+              <div class="hex-slider hex-slider--small">
+                <div class="hex-slider__size">
+                  <div data-delay="6000" data-animation="over" data-autoplay="1" data-duration="600" data-infinite="1" class="hex-slider__slider w-slider">
+                    <div class="hex-slider__mask w-slider-mask">
+                      <div class="hex-slider__slide w-slide">
+                        <div class="hex-slider__foreground hex-slider__foreground--yellow"></div>
+                        <div class="hex-slider__image hex-slide__image--shoe"></div>
+                      </div>
+                      <div class="hex-slider__slide w-slide">
+                        <div class="hex-slider__foreground hex-slider__foreground--yellow"></div>
+                        <div class="hex-slider__image hex-slide__image--dog"></div>
+                      </div>
+                      <div class="hex-slider__slide w-slide">
+                        <div class="hex-slider__foreground hex-slider__foreground--yellow"></div>
+                        <div class="hex-slider__image hex-slide__image--car"></div>
+                      </div>
+                    </div>
+                    <div class="hex-slider__hide w-slider-arrow-left">
+                      <div class="w-icon-slider-left"></div>
+                    </div>
+                    <div class="hex-slider__hide w-slider-arrow-right">
+                      <div class="w-icon-slider-right"></div>
+                    </div>
+                    <div class="hex-slider__hide w-slider-nav w-round"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="styles__section">
+        <div class="styles__header">
+          <div class="container">
+            <div class="styles__title">hexagons</div>
+          </div>
+        </div>
+        <div class="styles___content">
+          <div class="container">
+            <div>
+              <div class="styles__title styles__title--subsection">Steps BG hexagon</div>
+              <div class="step-bg">
+                <div class="steps-bg__solid">
+                  <div class="hex-pop-up">
+                    <div class="svg w-embed"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewbox="0 0 220 221" preserveaspectratio="xMinYMin meet">
+  <use xlink:href="#hexagon" fill="url(#gradient)"></use>
+</svg></div>
+                  </div>
+                </div>
+                <div class="steps-bg__transparent">
+                  <div class="honeycomb">
+                    <div class="honeycomb__03">
+                      <div class="honeycombsvg">
+                        <div class="svg w-embed"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewbox="0 0 220 218" preserveaspectratio="xMinYMin meet">
+  <use xlink:href="#hexagon" fill="url(#gradient)"></use>
+</svg></div>
+                      </div>
+                    </div>
+                    <div class="honeycomb__02">
+                      <div class="honeycombsvg">
+                        <div class="svg w-embed"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewbox="0 0 220 218" preserveaspectratio="xMinYMin meet">
+  <use xlink:href="#hexagon" fill="url(#gradient)"></use>
+</svg></div>
+                      </div>
+                    </div>
+                    <div class="honeycomb__01">
+                      <div class="honeycombsvg">
+                        <div class="svg w-embed"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewbox="0 0 220 218" preserveaspectratio="xMinYMin meet">
+  <use xlink:href="#hexagon" fill="url(#gradient)"></use>
+</svg></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.4.1.min.220afd743d.js" type="text/javascript" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script src="../js/webflow.js" type="text/javascript"></script>
+  <!-- [if lte IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif] -->
+</body>
+</html>
