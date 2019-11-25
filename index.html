@@ -15,7 +15,7 @@
     <link href="css/webflow.css" rel="stylesheet" type="text/css">
     <link href="css/sweethoney.webflow.css" rel="stylesheet" type="text/css">
     <script>
-        const urlParams = new URLSearchParams(window.location.search);
+        var urlParams = new URLSearchParams(window.location.search);
         const logout_tracker = urlParams.get('logout_tracker');
         if (logout_tracker == 'true') {
             var cookie = 'loginTracker' + "=" + 'false' + "; path=/; domain=.surveyhoney.com";
