@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<!--  Last Published: Tue Nov 05 2019 07:26:56 GMT+0000 (UTC)  -->
 <html data-wf-page="5d63af4118659f16e208e103" data-wf-site="5d551e724d608affcd2cf0c1">
 
 <head>
@@ -15,6 +14,17 @@
     <link href="css/normalize.css" rel="stylesheet" type="text/css">
     <link href="css/webflow.css" rel="stylesheet" type="text/css">
     <link href="css/sweethoney.webflow.css" rel="stylesheet" type="text/css">
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const logout_tracker = urlParams.get('logout_tracker');
+        if (logout_tracker == 'true') {
+            var cookie = 'loginTracker' + "=" + 'false' + "; path=/; domain=.surveyhoney.com";
+            var now = new Date();
+            now.setTime(now.getTime() + -1 * 24 * 60 * 60 * 1000);
+            cookie += "; expires=" + now.toUTCString();
+            document.cookie = cookie;
+        }
+    </script>
     <script>
         function getCookie(name) {
             var cookies = document.cookie.split(";"),
