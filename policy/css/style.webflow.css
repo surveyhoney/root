@@ -99,6 +99,7 @@
 .footer__body__links__legal {
   margin-left: 24px;
   float: right;
+  color: #fff;
 }
 
 .hex-hero-bg {
@@ -231,6 +232,12 @@
 
 .link-9 {
   color: #000;
+}
+
+.link-10 {
+  font-family: futura-pt, sans-serif;
+  color: #fff;
+  text-decoration: none;
 }
 
 @media (max-width: 991px) {
