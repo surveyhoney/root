@@ -18,18 +18,7 @@
         <param name='host_url' value='https%3A%2F%2Fus-west-2b.online.tableau.com%2F' /> 
         <param name='embed_code_version' value='3' /> 
         <param name='site_root' value='&#47;t&#47;surveyhoney' />
-        <param name='name' value='UserActivity&#47;UserActivity-Board' />
-        <script>
-            var localdate = new Date();
-            localTime = localdate.getTime();
-            localOffset = localdate.getTimezoneOffset() * 60000;
-            utcTime = localTime + localOffset;
-            var date = new Date(utcTime);
-            var year = date.getFullYear();
-            var month = date.getMonth() + 1;
-            var day = date.getDate();
-            document.write("<param name='filter' value='Date Patram="+year+'-'+month+'-'+day+"' />");
-        </script>
+        <param name='name' value='SystemActivity&#47;OverallActivity-Board' />
         <param name='tabs' value='yes' />
         <param name='toolbar' value='false' />
         <param name='showAppBanner' value='false' />
