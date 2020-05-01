@@ -2,6 +2,7 @@
         $(window).resize(function() {
             viewportwidth = getViewPort()[0]
             viewportheight = getViewPort()[1]
+            // viewportheight = viewportwidth * (15/24)
             $(".iframe-container").css({
                 "width": viewportwidth + 'px',
                 "height": viewportheight + 'px'
