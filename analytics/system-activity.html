@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
     <meta content="width=device-width, initial-scale=1" name="viewport">
-    <title>Analytics | Survey Honey</title>
+    <title>System Activity - Analytics | Survey Honey</title>
     <!-- <meta http-equiv="refresh" content="1800"> -->
     <link href="https://surveyhoney.com/images/favicon.png" rel="shortcut icon" type="image/x-icon">
     <link href="https://surveyhoney.com/images/webclip.png" rel="apple-touch-icon"> 
@@ -21,6 +21,17 @@
         <param name='embed_code_version' value='3' /> 
         <param name='site_root' value='&#47;t&#47;surveyhoney' />
         <param name='name' value='SystemActivity&#47;OverallActivity-Board' />
+        <script>
+            var localdate = new Date();
+            localTime = localdate.getTime();
+            localOffset = localdate.getTimezoneOffset() * 60000;
+            utcTime = localTime + localOffset;
+            var date = new Date(utcTime);
+            var year = date.getFullYear();
+            var month = date.getMonth() + 1;
+            var day = date.getDate();
+            document.write("<param name='filter' value='Date Patram="+year+'-'+month+'-'+day+"' />");
+        </script>
         <param name='tabs' value='yes' />
         <param name='toolbar' value='false' />
         <param name='showAppBanner' value='false' />
