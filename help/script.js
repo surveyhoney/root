@@ -1,5 +1,5 @@
 class Question {
-    constructor(category, title, answer, display = 0) {
+    constructor(category, title, answer, display = false) {
         this.category = category;
         this.title = title;
         this.answer = answer;
