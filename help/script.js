@@ -25,6 +25,13 @@ var app = new Vue({
         updateNav(state){
             this.nav = state
         },
+        resetSelection: function(){
+            this.question_list.forEach(function(ques){
+                if(ques.display){
+                    ques.display = false
+                }
+            })
+        }
     },
 
     computed: {

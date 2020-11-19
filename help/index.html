@@ -8,9 +8,12 @@
 
 <head>
     <meta charset="utf-8">
+    <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Help Desk | SurveyHoney</title>
     <meta name="description" content="">
+    <link href="https://surveyhoney.com/images/favicon.png" rel="shortcut icon" type="image/x-icon">
+    <link href="https://surveyhoney.com/images/webclip.png" rel="apple-touch-icon">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.typekit.net/psb2gph.css">
@@ -25,7 +28,7 @@
                     <div class="nav-title text-center pb-3 mb-3" style="font-weight: 600;font-size: 19px;">
                         Help Center Topics
                     </div>
-                    <div v-for="topic in categories" class="topics w-100" @click="updateTopic(topic)" :class="{'text-dark': selectedCategory===topic}">
+                    <div v-for="topic in categories" class="topics w-100" @click="updateTopic(topic); resetSelection();" :class="{'text-dark': selectedCategory===topic}">
                         {{topic}}
                     </div>
                     <!-- <div class="topics w-100">
@@ -39,7 +42,7 @@
                     <div class="nav-title text-center pb-3 mb-3" style="font-weight: 600;font-size: 19px;">
                         Help Center Topics
                     </div>
-                    <div v-for="topic in categories" class="topics w-100" @click="updateTopic(topic)" :class="{'text-dark': selectedCategory===topic}">
+                    <div v-for="topic in categories" class="topics w-100" @click="updateTopic(topic); resetSelection();" :class="{'text-dark': selectedCategory===topic}">
                         {{topic}}
                     </div>
                     <!-- <div class="topics w-100">
@@ -54,7 +57,7 @@
                 <div class="row mt-5 banner">
                     <div class="w-100 text-center m-auto">
                         Need Help?
-                        <div class="search"><input  @focus="nav=0" type="text" v-model="search" placeholder="Type your question or search term here..."></div>
+                        <div class="search"><input  @focus="nav=0;" @input="resetSelection()" type="text" v-model="search" placeholder="Type your question or search term here..."></div>
                     </div>
                 </div>
                 <div class="help-area pl-3 mt-5 mb-5 pt-3">
