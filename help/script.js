@@ -10,10 +10,12 @@ class Question {
 var app = new Vue({
     el: '#app',
     methods: {
+
         updateTopic: function (topic) {
             this.selectedCategory = topic
             this.search = ''
         },
+
         contains: function (target, pattern){
             var value = 0;
             var len = pattern.length
@@ -22,9 +24,11 @@ var app = new Vue({
             });
             return (value === len) ? true: false
         },
+
         updateNav(state){
-            this.nav = state
+            this.showMobileNavigation = state
         },
+
         resetSelection: function(){
             this.question_list.forEach(function(ques){
                 if(ques.display){
@@ -35,8 +39,9 @@ var app = new Vue({
     },
 
     computed: {
+
         filtered_ques() {
-            this.nav = false
+            this.showMobileNavigation = false
             if (this.search == '') {
                 if (this.search_switch == true) {
                     this.selectedCategory = "Popular FAQ"
@@ -54,6 +59,7 @@ var app = new Vue({
                 })
             }
         },
+
         displayNull() {
             try {
                 this.filtered_ques[0].title
@@ -65,10 +71,12 @@ var app = new Vue({
         }
     },
     data: {
+
         selectedCategory: 'Popular FAQ',
         search: '',
         search_switch: false,
-        nav: 0,
+        showMobileNavigation: false,
+
         categories: [
             'Popular FAQ',
             'Coins',
@@ -77,9 +85,9 @@ var app = new Vue({
             'Surveys',
             'Security (?)'
         ],
+
         question_list: [
             
-          
             new Question(
             
                `Popular FAQ`,

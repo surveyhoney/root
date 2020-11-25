@@ -36,8 +36,8 @@
                     </div> -->
                 </div>
             </div>
-            <div class="sidebar-mobile p-0" :class="{'sidebar-close' : !nav}">
-                <div id="sidebar-content" class="sidebar-content px-4 py-2" :class="{'d-none' : !nav}">
+            <div class="sidebar-mobile p-0" :class="{'sidebar-close' : !showMobileNavigation}">
+                <div id="sidebar-content" class="sidebar-content px-4 py-2" :class="{'d-none' : !showMobileNavigation}">
                     <div class="closebtn d-md-none" @click="updateNav(0)" >&times;</div>
                     <div class="nav-title text-center pb-3 mb-3" style="font-weight: 600;font-size: 19px;">
                         Help Center Topics
@@ -57,7 +57,7 @@
                 <div class="row mt-5 banner">
                     <div class="w-100 text-center m-auto">
                         Need Help?
-                        <div class="search"><input  @focus="nav=0;" @input="resetSelection()" type="text" v-model="search" placeholder="Type your question or search term here..."></div>
+                        <div class="search"><input  @focus="showMobileNavigation=false;" @input="resetSelection()" type="text" v-model="search" placeholder="Type your question or search term here..."></div>
                     </div>
                 </div>
                 <div class="help-area pl-3 mt-5 mb-5 pt-3">
