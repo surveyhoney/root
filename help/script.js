@@ -1,19 +1,47 @@
 class Question {
-    constructor(category, title, answer, display = false) {
+    constructor(category, title, answer, id = 1, display = false) {
         this.category = category;
         this.title = title;
         this.answer = answer;
+        this.id = id;
         this.display = display
     }
 }
 
+var router = new VueRouter({
+    mode: 'history',
+    routes: []
+
+});
+
+
 var app = new Vue({
-    el: '#app',
+    el: '#app-helpdesk',
+    router,
     methods: {
 
-        updateTopic: function (topic) {
+        searchCategory: function (topic) {
             this.selectedCategory = topic
+            this.searchMethod = 'category'
             this.search = ''
+        },
+
+        searchInput: function (){
+            if(this.search != ''){
+                this.searchMethod = 'input'
+                this.selectedCategory = 'Search'
+            }
+            else{
+                if(this.selectedCategory == 'Search'){
+                    this.selectedCategory = "Popular FAQs"
+                    this.searchMethod = 'category'
+                }
+            }
+        },
+
+        searchQuery: function(){
+            this.searchMethod = 'query'
+            this.selectedCategory = 'Help Article'
         },
 
         contains: function (target, pattern){
@@ -25,60 +53,90 @@ var app = new Vue({
             return (value === len) ? true: false
         },
 
-        updateNav(state){
+        toggleNavigation(state){
             this.showMobileNavigation = state
         },
 
         resetSelection: function(){
-            this.question_list.forEach(function(ques){
-                if(ques.display){
-                    ques.display = false
+            this.allQuestions.forEach(function(question){
+                if(question.display){
+                    question.display = false
                 }
             })
-        }
+        },
     },
 
     computed: {
-
-        filtered_ques() {
+        filteredQuestions() {
             this.showMobileNavigation = false
-            if (this.search == '') {
-                if (this.search_switch == true) {
-                    this.selectedCategory = "Popular FAQ"
-                    this.search_switch = false
-                }
-                return this.question_list.filter(post => {
-                    return post.category.toLowerCase().includes(this.selectedCategory.toLowerCase())
+            
+            if(this.searchMethod == 'input'){
+                return this.allQuestions.filter(question => {
+                    return (this.contains(question.title.toLowerCase(), this.search.toLowerCase().split(' ')) || this.contains(question.answer.toLowerCase(), this.search.toLowerCase().split(' ')))
+                })
+                
+            }
+
+            if(this.searchMethod == 'category'){
+                return this.allQuestions.filter(question => {
+                    return question.category.toLowerCase().includes(this.selectedCategory.toLowerCase())
                 })
             }
-            else {
-                this.selectedCategory = "Search"
-                this.search_switch = true
-                return this.question_list.filter(post => {
-                    return (this.contains(post.title.toLowerCase(), this.search.toLowerCase().split(' ')) || this.contains(post.answer.toLowerCase(), this.search.toLowerCase().split(' ')))
+
+            if(this.searchMethod == 'query'){
+                return this.allQuestions.filter(question => {
+                    if(question.id == this.querySearchTerm){
+                        this.allQuestions[this.allQuestions.indexOf(question)].display = true
+                        return true
+                    }
+                    return false
+                    //return (question.id == this.querySearchTerm) ? true : false
                 })
             }
+
         },
 
-        displayNull() {
+        isFilteredListEmpty() {
             try {
-                this.filtered_ques[0].title
+                this.filteredQuestions[0].title
                 return false
             }
             catch{
                 return true
             }
+        },
+
+        querySearchTerm() {
+            if(this.$route.query.SearchID){
+                this.searchMethod = 'query'
+            }
+            return this.$route.query.SearchID
         }
     },
+
+    watch: {
+        search: {
+            handler: function(val, oldVal) {
+                this.searchInput(); 
+            },
+            deep: true
+        },
+
+    },  
+
+    mounted() {
+        this.searchQuery()
+    },
+
     data: {
 
-        selectedCategory: 'Popular FAQ',
+        selectedCategory: 'Popular FAQs',
+        searchMethod: 'category',
         search: '',
-        search_switch: false,
         showMobileNavigation: false,
 
         categories: [
-            'Popular FAQ',
+            'Popular FAQs',
             'Coins',
             'Account',
             'PayPal',
@@ -86,11 +144,11 @@ var app = new Vue({
             'Security (?)'
         ],
 
-        question_list: [
+        allQuestions: [
             
             new Question(
             
-               `Popular FAQ`,
+               `Popular FAQs`,
                `Can anyone become a member of Survey Honey?`,
                `Survey Honey may be used only by persons who are 18 years of age or older within the United States and its associated territories.`
               
@@ -98,7 +156,7 @@ var app = new Vue({
              
             new Question(
             
-                    `Popular FAQ`,
+                    `Popular FAQs`,
                     `Why was I invited to an expired or closed survey?`,
                     `Surveys can fill up quickly. You may sometimes receive a 'quota full' or 'this link has expired' response from the survey. <br> Don't worry, there are a plethora of other surveys for you to participate in!`
 
@@ -106,7 +164,7 @@ var app = new Vue({
 
             new Question(
             
-                    `Popular FAQ`,
+                    `Popular FAQs`,
                     `How do I get paid?`,
                     `In order to redeem a cashout via PayPal, you must meet the following criteria:
             <br>-be located within the United States and confirm your location via two-factor authentication using a mobile phone.
@@ -117,7 +175,7 @@ var app = new Vue({
 
             new Question(
             
-                    `Popular FAQ`,
+                    `Popular FAQs`,
                     `What's the minimum amount that I can cash out and how quickly will my payment process?`,
                     `SurveyHoney offers two repayment models - the traditional model, in which payment is issued within two weeks of the original cash out request, and the expedited model, in which payment is issued within 48 hours of the original cash out request minus 20% of the payout’s total. You must accrue a balance of $12.50 USD to cash out.`
 
@@ -133,7 +191,7 @@ var app = new Vue({
 
             new Question(
             
-                    `Popular FAQ`,
+                    `Popular FAQs`,
                     `How often will I receive surveys?`,
                     `If you're subscribed to Survey Honey's emails, we'll let you know about new survey opportunities every few days! You also don't have to wait to hear from us. At any time you can log in and view all available surveys in your dashboard.`
 
@@ -189,7 +247,7 @@ var app = new Vue({
 
             new Question(
             
-                    `Popular FAQ`,
+                    `Popular FAQs`,
                     `What's the value of a Honey Coin in USD?`,
                     `100 Coins is equivalent to $1 USD.`
 
@@ -213,7 +271,7 @@ var app = new Vue({
 
             new Question(
             
-                    `Popular FAQ`,
+                    `Popular FAQs`,
                     `How do I get started?`,
                     `To get started, sign up at surveyhoney.com`
 
@@ -367,8 +425,8 @@ var app = new Vue({
             
                     `Surveys`,
                     `Why did the survey disqualify me before I completed it?`,
-                    `Thank you for trying to complete one of our surveys! We understand that your time is precious and we're thankful that you opt to take surveys with us. <br> Each survey serves specific functions for each research company with which we work. To that end, if the answers you provide aren't consistent with the type of person they're looking to survey, your data will be excluded from the final data set as a result and the survey will end. <br> Sudden exits such as these aren't always based on your demographic information; they can be based your answers in-survey. For example, some surveys might ask you to confirm that you're reading each question by selecting a specific response choice. The best way to make sure that you don't get disqualified is to answer each question honestly and to read each question thoroughly before answering.`
-
+                    `Thank you for trying to complete one of our surveys! We understand that your time is precious and we're thankful that you opt to take surveys with us. <br> Each survey serves specific functions for each research company with which we work. To that end, if the answers you provide aren't consistent with the type of person they're looking to survey, your data will be excluded from the final data set as a result and the survey will end. <br> Sudden exits such as these aren't always based on your demographic information; they can be based your answers in-survey. For example, some surveys might ask you to confirm that you're reading each question by selecting a specific response choice. The best way to make sure that you don't get disqualified is to answer each question honestly and to read each question thoroughly before answering.`,
+                    `125`
                     ),
 
       

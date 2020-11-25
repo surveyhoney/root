@@ -21,14 +21,14 @@
 </head>
 
 <body>
-    <div id="app" v-cloak class="container-fluid ">
+    <div id="app-helpdesk" v-cloak class="container-fluid ">
         <div class="row">
             <div class="sidebar p-0">
                 <div id="sidebar-content" class="sidebar-content px-4 py-2">
                     <div class="nav-title text-center pb-3 mb-3" style="font-weight: 600;font-size: 19px;">
                         Help Center Topics
                     </div>
-                    <div v-for="topic in categories" class="topics w-100" @click="updateTopic(topic); resetSelection();" :class="{'text-dark': selectedCategory===topic}">
+                    <div v-for="topic in categories" class="topics w-100" @click="searchCategory(topic); resetSelection();" :class="{'text-dark': selectedCategory===topic}">
                         {{topic}}
                     </div>
                     <!-- <div class="topics w-100">
@@ -38,11 +38,11 @@
             </div>
             <div class="sidebar-mobile p-0" :class="{'sidebar-close' : !showMobileNavigation}">
                 <div id="sidebar-content" class="sidebar-content px-4 py-2" :class="{'d-none' : !showMobileNavigation}">
-                    <div class="closebtn d-md-none" @click="updateNav(0)" >&times;</div>
+                    <div class="closebtn d-md-none" @click="toggleNavigation(false)" >&times;</div>
                     <div class="nav-title text-center pb-3 mb-3" style="font-weight: 600;font-size: 19px;">
                         Help Center Topics
                     </div>
-                    <div v-for="topic in categories" class="topics w-100" @click="updateTopic(topic); resetSelection();" :class="{'text-dark': selectedCategory===topic}">
+                    <div v-for="topic in categories" class="topics w-100" @click="searchCategory(topic); resetSelection();" :class="{'text-dark': selectedCategory===topic}">
                         {{topic}}
                     </div>
                     <!-- <div class="topics w-100">
@@ -52,18 +52,18 @@
             </div>
             <div class="col">
                 <div class="row col d-inline-block">
-                    <button class="sidebar-toggle d-block d-md-none" @click="updateNav(1)">☰<div></div></button>
+                    <button class="sidebar-toggle d-block d-md-none" @click="toggleNavigation(true)">☰<div></div></button>
                     <img src="https://dl.airtable.com/.attachmentThumbnails/9647bdfa7ca4e508c7ddac9e12c3a315/da226411.png" alt="" style="width: 198px;float: right;" class="image-2 pt-3"></div>
                 <div class="row mt-5 banner">
                     <div class="w-100 text-center m-auto">
                         Need Help?
-                        <div class="search"><input  @focus="showMobileNavigation=false;" @input="resetSelection()" type="text" v-model="search" placeholder="Type your question or search term here..."></div>
+                        <div class="search"><input @focus="showMobileNavigation=false" @input="resetSelection()" type="text" v-model="search" placeholder="Type your question or search term here..."></div>
                     </div>
                 </div>
                 <div class="help-area pl-3 mt-5 mb-5 pt-3">
                     <span style="font-size: 20px;font-weight: 400;">{{selectedCategory}}</span>
 
-                    <div v-for="(item, index) in filtered_ques" class="ques-block d-flex" @click="item.display = !item.display">
+                    <div v-for="(item, index) in filteredQuestions" class="ques-block d-flex" @click="item.display = !item.display">
                         <div class="ques-index">
                             {{index + 1 }}
                         </div>
@@ -89,7 +89,7 @@
                             </div>
                         </div>
                     </div> -->
-                    <div class="no-result-msg text-center" :class="{hidden : !displayNull}">No search results were found.</div>
+                    <div class="no-result-msg text-center" :class="{hidden : !isFilteredListEmpty}">No search results were found.</div>
                 </div>
             </div>
         </div>
@@ -99,6 +99,7 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/vue-router"></script>
     <script src="script.js"></script>
     <script>
         function openNav() {
