@@ -33,7 +33,7 @@ var app = new Vue({
             }
             else{
                 if(this.categorySearchTerm == 'Search'){
-                    this.categorySearchTerm = "Popular FAQ"
+                    this.categorySearchTerm = this.categories[0]
                     this.searchMethod = 'category'
                 }
             }
