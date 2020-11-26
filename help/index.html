@@ -28,7 +28,7 @@
                     <div class="nav-title text-center pb-3 mb-3" style="font-weight: 600;font-size: 19px;">
                         Help Center Topics
                     </div>
-                    <div v-for="topic in categories" class="topics w-100" @click="searchCategory(topic); resetSelection();" :class="{'text-dark': selectedCategory===topic}">
+                    <div v-for="topic in categories" class="topics w-100" @click="searchCategory(topic); resetSelection();" :class="{'text-dark': categorySearchTerm===topic}">
                         {{topic}}
                     </div>
                     <!-- <div class="topics w-100">
@@ -42,7 +42,7 @@
                     <div class="nav-title text-center pb-3 mb-3" style="font-weight: 600;font-size: 19px;">
                         Help Center Topics
                     </div>
-                    <div v-for="topic in categories" class="topics w-100" @click="searchCategory(topic); resetSelection();" :class="{'text-dark': selectedCategory===topic}">
+                    <div v-for="topic in categories" class="topics w-100" @click="searchCategory(topic); resetSelection();" :class="{'text-dark': categorySearchTerm===topic}">
                         {{topic}}
                     </div>
                     <!-- <div class="topics w-100">
@@ -61,7 +61,7 @@
                     </div>
                 </div>
                 <div class="help-area pl-3 mt-5 mb-5 pt-3">
-                    <span style="font-size: 20px;font-weight: 400;">{{selectedCategory}}</span>
+                    <span style="font-size: 20px;font-weight: 400;">{{categorySearchTerm}}</span>
 
                     <div v-for="(item, index) in filteredQuestions" class="ques-block d-flex" @click="item.display = !item.display">
                         <div class="ques-index">
