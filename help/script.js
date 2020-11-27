@@ -19,7 +19,7 @@ var app = new Vue({
     router,
     methods: {
 
-        searchCategory: function (topic) {
+        searchCategory: function (topic = this.categories[0]) {
             this.categorySearchTerm = topic
             this.searchMethod = 'category'
             this.inputSearchTerm = ''
@@ -44,8 +44,7 @@ var app = new Vue({
                 this.categorySearchTerm = 'Help Article'
             }
             else if(this.queryCategoryTerm != ''){
-                this.searchMethod = 'category'
-                this.categorySearchTerm = this.categories.includes(this.queryCategoryTerm) ? this.queryCategoryTerm : this.categories[0]
+                this.searchCategory(this.queryCategoryTerm)
             }
         },
 
@@ -142,19 +141,17 @@ var app = new Vue({
             }
         },
 
-        querySearchTerm() {
-            if(this.$route.query.search_id){
-                this.searchMethod = 'query'
-            }
-            return this.$route.query.search_id || ''
+        querySearchTerm: {
+            get: function(){
+                return this.$route.query.search_id || ''
+            },
         },
-        
-        queryCategoryTerm() {
-            if(this.$route.query.cat){
-                this.searchMethod = 'category'
-            }
-            return this.$route.query.cat || ''
-        }
+
+        queryCategoryTerm: {
+            get: function(){
+                return this.$route.query.cat || ''
+            },
+        },
     },
 
     watch: {
