@@ -182,7 +182,7 @@ var app = new Vue({
                 'Content-Type': 'text/plain'
             }
          })
-        .then(response => console.log(response))
+        .then(response => console.log('test' + response))
         .catch(response => console.log(response));
     },
 
