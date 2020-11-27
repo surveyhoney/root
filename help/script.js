@@ -177,12 +177,12 @@ var app = new Vue({
     mounted() {
         this.triggerQuery()
 
-        axios.get("resources/question-bank.txt", {
+        axios.get("resources/question-bank.csv", {
             headers: {
                 'Content-Type': 'text/plain'
             }
          })
-        .then(response => this.generateQuestionList(response))
+        .then(response => console.log(response))
         .catch(response => console.log(response));
     },
 
