@@ -20,8 +20,8 @@ var app = new Vue({
     methods: {
 
         searchCategory: function (topic = this.categories[0]) {
-            this.categorySearchTerm = topic
             this.searchMethod = 'category'
+            this.categorySearchTerm = topic
             this.inputSearchTerm = ''
         },
 
@@ -32,8 +32,8 @@ var app = new Vue({
             }
             else{
                 if(this.categorySearchTerm == 'Search'){
-                    this.categorySearchTerm = this.categories[0]
                     this.searchMethod = 'category'
+                    this.categorySearchTerm = this.categories[0]
                 }
             }
         },
@@ -149,7 +149,7 @@ var app = new Vue({
 
         queryCategoryTerm: {
             get: function(){
-                return this.$route.query.cat || ''
+                return this.$route.query.focus_topic || ''
             },
         },
     },
