@@ -19,7 +19,7 @@ var app = new Vue({
     router,
     methods: {
 
-        searchCategory: function (topic = this.categories[0]) {
+        searchCategory: function (topic = 'Popular FAQ') {
             this.searchMethod = 'category'
             this.categorySearchTerm = topic
             this.inputSearchTerm = ''
