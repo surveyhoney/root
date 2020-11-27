@@ -143,7 +143,7 @@ var app = new Vue({
                 return false
             }
             catch {
-                if(this.searchMethod == 'category'){
+                if (this.searchMethod == 'category') {
                     this.searchCategory()
                     return false
                 }
@@ -177,8 +177,12 @@ var app = new Vue({
     mounted() {
         this.triggerQuery()
 
-        axios.get("resources/question-bank.csv")
-            .then(response => this.generateQuestionList(response))
+        axios.get("resources/question-bank.csv", {
+            headers: {
+                'Content-Type': 'text/csv'
+            }
+         })
+        .then(response => this.generateQuestionList(response))
     },
 
     data: {
