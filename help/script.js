@@ -127,7 +127,6 @@ var app = new Vue({
                         return true
                     }
                     return false
-                    //return (question.id == this.querySearchTerm) ? true : false
                 })
             }
 
