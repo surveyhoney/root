@@ -144,10 +144,10 @@ var app = new Vue({
         },
 
         querySearchTerm() {
-            if(this.$route.query.search-id){
+            if(this.$route.query.search_id){
                 this.searchMethod = 'query'
             }
-            return this.$route.query.search-id || ''
+            return this.$route.query.search_id || ''
         },
         
         queryCategoryTerm() {
