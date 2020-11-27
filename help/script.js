@@ -37,7 +37,7 @@ var app = new Vue({
                 }
             }
         },
-
+ 
         triggerQuery: function () {
             if (this.querySearchID != '') {
                 this.searchMethod = 'query'
@@ -96,7 +96,7 @@ var app = new Vue({
                 }
 
             })
-            
+
             this.categories = categories
             this.allQuestions = allQuestions
         }
