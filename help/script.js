@@ -86,8 +86,8 @@ var app = new Vue({
             eachQuestion.forEach(function (question, index) {
                 var question_id = question[0]
                 var question_category = question[1].replace(/"/g, '')
-                var question_title = question[2].replace(/^\"/, '').replace(/\"\s$/, '')
-                var question_answer = question[3].replace(/^\"/, '').replace(/\"\s$/, '')
+                var question_title = question[2].replace(/^\"/, '').replace(/\"$/, '')
+                var question_answer = question[3].replace(/^\"/, '').replace(/\"$/, '')
 
                 allQuestions.push(new Question(question_id, question_category, question_title, question_answer))
 
