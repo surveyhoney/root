@@ -73,15 +73,12 @@ var app = new Vue({
             var allQuestions = []
             var categories = []
 
-            var rows = data['data'].split('\n')
+            // var rows = data['data'].split('\n')
+            var rows = data['data'].split(new RegExp('\n(?=(?:[^\"]*\"[^\"]*\")*[^\"]*$)'), -1)
             console.log(rows)
             var eachQuestion = []
             var header = rows[0].split(',')
 
-            var position_id = header.indexOf('ID')
-            var position_category = header.indexOf('Topic Category')
-            var position_title = header.indexOf('Question')
-            var position_answer = header.indexOf('Answer')
 
 
             rows.forEach(function (row, index) {
@@ -90,10 +87,11 @@ var app = new Vue({
             })
             console.log(eachQuestion)
             eachQuestion.forEach(function (question, index) {
-                var question_id = question[position_id]
-                var question_category = question[position_category].replace(/"/g, '')
-                var question_title = question[position_title].replace(/^\"/, '').replace(/\"$/, '')
-                var question_answer = question[position_answer].replace(/^\"/, '').replace(/\"$/, '')
+                console.log(index)
+                var question_id = question[0]
+                var question_category = question[1].replace(/"/g, '')
+                var question_title = question[2].replace(/^\"/, '').replace(/\"\s$/, '')
+                var question_answer = question[3].replace(/^\"/, '').replace(/\"\s$/, '')
 
                 allQuestions.push(new Question(question_id, question_category, question_title, question_answer))
 
