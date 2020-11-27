@@ -13,7 +13,7 @@ var router = new VueRouter({
     routes: []
 
 });
-Vue.config.devtools = false
+// Vue.config.devtools = false
 var app = new Vue({
     el: '#app-helpdesk',
     router,
@@ -183,6 +183,7 @@ var app = new Vue({
             }
          })
         .then(response => this.generateQuestionList(response))
+        .catch(response => console.log(response));
     },
 
     data: {
