@@ -13,7 +13,7 @@ var router = new VueRouter({
     routes: []
 
 });
-// Vue.config.devtools = false
+Vue.config.devtools = false
 var app = new Vue({
     el: '#app-helpdesk',
     router,
@@ -177,7 +177,7 @@ var app = new Vue({
     mounted() {
         this.triggerQuery()
 
-        axios.get("resources/question-bank.csv", {
+        axios.get("resources/question-bank.txt", {
             headers: {
                 'Content-Type': 'text/plain'
             }
