@@ -143,6 +143,10 @@ var app = new Vue({
                 return false
             }
             catch {
+                if(this.searchMethod == 'category'){
+                    this.searchCategory()
+                    return false
+                }
                 return true
             }
         },
