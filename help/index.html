@@ -31,9 +31,6 @@
                     <div v-for="topic in categories" class="topics w-100" @click="searchCategory(topic); resetSelection();" :class="{'text-dark': categorySearchTerm===topic}">
                         {{topic}}
                     </div>
-                    <!-- <div class="topics w-100">
-                        Points
-                    </div> -->
                 </div>
             </div>
             <div class="sidebar-mobile p-0" :class="{'sidebar-close' : !showMobileNavigation}">
@@ -45,9 +42,6 @@
                     <div v-for="topic in categories" class="topics w-100" @click="searchCategory(topic); resetSelection();" :class="{'text-dark': categorySearchTerm===topic}">
                         {{topic}}
                     </div>
-                    <!-- <div class="topics w-100">
-                        Points
-                    </div> -->
                 </div>
             </div>
             <div class="col">
