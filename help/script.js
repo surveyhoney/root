@@ -179,7 +179,7 @@ var app = new Vue({
 
         axios.get("resources/question-bank.csv", {
             headers: {
-                'Content-Type': 'text/csv'
+                'Content-Type': 'text/plain'
             }
          })
         .then(response => this.generateQuestionList(response))
