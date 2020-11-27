@@ -71,6 +71,7 @@ var app = new Vue({
 
         generateQuestionList: function(data){
             var allQuestions = []
+            var categories = []
 
             var rows = data['data'].split(new RegExp('\r\n(?=(?:[^\"]*\"[^\"]*\")*[^\"]*$)'))
 
@@ -96,8 +97,13 @@ var app = new Vue({
 
                 allQuestions.push(new Question(question_id, question_category, question_title, question_answer))
 
+                if(!categories.includes(question_category)){
+                    categories.push(question_category)
+                }
+
             })
 
+            this.categories = categories
             this.allQuestions = allQuestions
         }
     },
@@ -177,16 +183,7 @@ var app = new Vue({
         categorySearchTerm: 'Popular FAQ',
         inputSearchTerm: '',
         showMobileNavigation: false,
-
-        categories: [
-            'Popular FAQ',
-            'Security (?)',
-            'PayPal',
-            'Surveys',
-            'Coins',
-            'Account',
-        ],
-
+        categories: [],
         allQuestions: [],
     },
 })
