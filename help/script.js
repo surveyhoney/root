@@ -39,12 +39,12 @@ var app = new Vue({
         },
 
         triggerQuery: function () {
-            if (this.querySearchTerm != '') {
+            if (this.querySearchID != '') {
                 this.searchMethod = 'query'
                 this.categorySearchTerm = 'Help Article'
             }
-            else if (this.queryCategoryTerm != '') {
-                this.searchCategory(this.queryCategoryTerm)
+            else if (this.querySearchCategory != '') {
+                this.searchCategory(this.querySearchCategory)
             }
         },
 
@@ -127,7 +127,7 @@ var app = new Vue({
 
             if (this.searchMethod == 'query') {
                 return this.allQuestions.filter(question => {
-                    if (question.id == this.querySearchTerm) {
+                    if (question.id == this.querySearchID) {
                         this.allQuestions[this.allQuestions.indexOf(question)].display = true
                         return true
                     }
@@ -151,13 +151,13 @@ var app = new Vue({
             }
         },
 
-        querySearchTerm: {
+        querySearchID: {
             get: function () {
                 return this.$route.query.search_id || ''
             },
         },
 
-        queryCategoryTerm: {
+        querySearchCategory: {
             get: function () {
                 return this.$route.query.focus_topic || ''
             },
