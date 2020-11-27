@@ -102,7 +102,7 @@ var app = new Vue({
                 }
 
             })
-
+            console.log(allQuestions)
             this.categories = categories
             this.allQuestions = allQuestions
         }
