@@ -13,7 +13,7 @@ var router = new VueRouter({
     routes: []
 
 });
-
+Vue.config.devtools = false
 var app = new Vue({
     el: '#app-helpdesk',
     router,
@@ -25,51 +25,51 @@ var app = new Vue({
             this.inputSearchTerm = ''
         },
 
-        searchInput: function (){
-            if(this.inputSearchTerm != ''){
+        searchInput: function () {
+            if (this.inputSearchTerm != '') {
                 this.searchMethod = 'input'
                 this.categorySearchTerm = 'Search'
             }
-            else{
-                if(this.categorySearchTerm == 'Search'){
+            else {
+                if (this.categorySearchTerm == 'Search') {
                     this.searchMethod = 'category'
                     this.categorySearchTerm = this.categories[0]
                 }
             }
         },
 
-        triggerQuery: function(){
-            if(this.querySearchTerm != ''){
+        triggerQuery: function () {
+            if (this.querySearchTerm != '') {
                 this.searchMethod = 'query'
                 this.categorySearchTerm = 'Help Article'
             }
-            else if(this.queryCategoryTerm != ''){
+            else if (this.queryCategoryTerm != '') {
                 this.searchCategory(this.queryCategoryTerm)
             }
         },
 
-        contains: function (target, pattern){
+        contains: function (target, pattern) {
             var value = 0;
             var len = pattern.length
-            pattern.forEach(function(word){
-              value = value + target.includes(word);
+            pattern.forEach(function (word) {
+                value = value + target.includes(word);
             });
-            return (value === len) ? true: false
+            return (value === len) ? true : false
         },
 
-        toggleNavigation(state){
+        toggleNavigation(state) {
             this.showMobileNavigation = state
         },
 
-        resetSelection: function(){
-            this.allQuestions.forEach(function(question){
-                if(question.display){
+        resetSelection: function () {
+            this.allQuestions.forEach(function (question) {
+                if (question.display) {
                     question.display = false
                 }
             })
         },
 
-        generateQuestionList: function(data){
+        generateQuestionList: function (data) {
             var allQuestions = []
             var categories = []
 
@@ -83,13 +83,13 @@ var app = new Vue({
             var position_title = header.indexOf('Question')
             var position_answer = header.indexOf('Answer')
 
-            
-            rows.forEach(function(row, index){
-                if(index != 0)
-                eachQuestion.push(row.split(new RegExp(',(?=(?:[^\"]*\"[^\"]*\")*[^\"]*$)'), -1))
+
+            rows.forEach(function (row, index) {
+                if (index != 0)
+                    eachQuestion.push(row.split(new RegExp(',(?=(?:[^\"]*\"[^\"]*\")*[^\"]*$)'), -1))
             })
-            
-            eachQuestion.forEach(function(question, index){
+
+            eachQuestion.forEach(function (question, index) {
                 var question_id = question[position_id]
                 var question_category = question[position_category].replace(/"/g, '')
                 var question_title = question[position_title].replace(/^\"/, '').replace(/\"$/, '')
@@ -97,7 +97,7 @@ var app = new Vue({
 
                 allQuestions.push(new Question(question_id, question_category, question_title, question_answer))
 
-                if(!categories.includes(question_category)){
+                if (!categories.includes(question_category)) {
                     categories.push(question_category)
                 }
 
@@ -111,23 +111,23 @@ var app = new Vue({
     computed: {
         filteredQuestions() {
             this.showMobileNavigation = false
-            
-            if(this.searchMethod == 'input'){
+
+            if (this.searchMethod == 'input') {
                 return this.allQuestions.filter(question => {
                     return (this.contains(question.title.toLowerCase(), this.inputSearchTerm.toLowerCase().split(' ')) || this.contains(question.answer.toLowerCase(), this.inputSearchTerm.toLowerCase().split(' ')))
                 })
-                
+
             }
 
-            if(this.searchMethod == 'category'){
+            if (this.searchMethod == 'category') {
                 return this.allQuestions.filter(question => {
                     return question.category.toLowerCase().includes(this.categorySearchTerm.toLowerCase())
                 })
             }
 
-            if(this.searchMethod == 'query'){
+            if (this.searchMethod == 'query') {
                 return this.allQuestions.filter(question => {
-                    if(question.id == this.querySearchTerm){
+                    if (question.id == this.querySearchTerm) {
                         this.allQuestions[this.allQuestions.indexOf(question)].display = true
                         return true
                     }
@@ -142,19 +142,19 @@ var app = new Vue({
                 this.filteredQuestions[0].title
                 return false
             }
-            catch{
+            catch {
                 return true
             }
         },
 
         querySearchTerm: {
-            get: function(){
+            get: function () {
                 return this.$route.query.search_id || ''
             },
         },
 
         queryCategoryTerm: {
-            get: function(){
+            get: function () {
                 return this.$route.query.focus_topic || ''
             },
         },
@@ -162,13 +162,13 @@ var app = new Vue({
 
     watch: {
         inputSearchTerm: {
-            handler: function(val, oldVal) {
-                this.searchInput(); 
+            handler: function (val, oldVal) {
+                this.searchInput();
             },
             deep: true
         },
 
-    },  
+    },
 
     mounted() {
         this.triggerQuery()
