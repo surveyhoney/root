@@ -73,7 +73,7 @@ var app = new Vue({
             var allQuestions = []
             var categories = []
 
-            var rows = data['data'].split(/'\r\n(?=(?:[^\"]*\"[^\"]*\")*[^\"]*$)'/, -1)
+            var rows = data['data'].split(new RegExp('\r\n(?=(?:[^\"]*\"[^\"]*\")*[^\"]*$)'), -1)
 
             var eachQuestion = []
             var header = rows[0].split(',')
@@ -86,7 +86,7 @@ var app = new Vue({
 
             rows.forEach(function (row, index) {
                 if (index != 0)
-                    eachQuestion.push(row.split(/',(?=(?:[^\"]*\"[^\"]*\")*[^\"]*$)'/, -1))
+                    eachQuestion.push(row.split(new RegExp(',(?=(?:[^\"]*\"[^\"]*\")*[^\"]*$)'), -1))
             })
 
             eachQuestion.forEach(function (question, index) {
