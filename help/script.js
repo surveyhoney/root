@@ -38,10 +38,14 @@ var app = new Vue({
             }
         },
 
-        searchQuery: function(){
+        triggerQuery: function(){
             if(this.querySearchTerm != ''){
                 this.searchMethod = 'query'
                 this.categorySearchTerm = 'Help Article'
+            }
+            else if(this.queryCategoryTerm != ''){
+                this.searchMethod = 'category'
+                this.categorySearchTerm = this.categories.includes(this.queryCategoryTerm) ? this.queryCategoryTerm : this.categories[0]
             }
         },
 
@@ -140,10 +144,17 @@ var app = new Vue({
         },
 
         querySearchTerm() {
-            if(this.$route.query.SearchID){
+            if(this.$route.query.search-id){
                 this.searchMethod = 'query'
             }
-            return this.$route.query.SearchID || ''
+            return this.$route.query.search-id || ''
+        },
+        
+        queryCategoryTerm() {
+            if(this.$route.query.cat){
+                this.searchMethod = 'category'
+            }
+            return this.$route.query.cat || ''
         }
     },
 
@@ -158,7 +169,7 @@ var app = new Vue({
     },  
 
     mounted() {
-        this.searchQuery()
+        this.triggerQuery()
 
         axios.get("resources/question-bank.csv")
             .then(response => this.generateQuestionList(response))
