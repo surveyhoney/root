@@ -178,7 +178,6 @@ var app = new Vue({
     },
 
     data: {
-
         searchMethod: 'category',
         categorySearchTerm: 'Popular FAQ',
         inputSearchTerm: '',
