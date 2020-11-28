@@ -106,7 +106,8 @@ var app = new Vue({
 
             if (this.searchMethod == 'category') {
                 return this.allQuestions.filter(question => {
-                    return question.category.toLowerCase().includes(this.categorySearchTerm.toLowerCase())
+                    return question.category.toLowerCase() === this.categorySearchTerm.toLowerCase()
+                    // return question.category.toLowerCase().includes(this.categorySearchTerm.toLowerCase())
                 })
             }
 
