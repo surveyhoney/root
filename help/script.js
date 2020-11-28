@@ -72,22 +72,13 @@ var app = new Vue({
         generateQuestionList: function (data) {
             var allQuestions = []
             var categories = []
-
-            // var rows = data['data'].split('\n')
-            var rows = data['data'].split(new RegExp('\n(?=(?:[^\"]*\"[^\"]*\")*[^\"]*$)'), -1)
-            var eachQuestion = []
-            // var header = rows[0].split(',')
-
-            rows.forEach(function (row, index) {
-                if (index != 0)
-                    eachQuestion.push(row.split(new RegExp(',(?=(?:[^\"]*\"[^\"]*\")*[^\"]*$)'), -1))
-            })
             
-            eachQuestion.forEach(function (question, index) {
+            data.forEach(function (question, index) {
+                if(index == 0) return
                 var question_id = question[0]
-                var question_category = question[1].replace(/"/g, '')
-                var question_title = question[2].replace(/^\"/, '').replace(/\"$/, '')
-                var question_answer = question[3].replace(/^\"/, '').replace(/\"$/, '')
+                var question_category = question[1]
+                var question_title = question[2]
+                var question_answer = question[3]
 
                 allQuestions.push(new Question(question_id, question_category, question_title, question_answer))
 
@@ -171,13 +162,17 @@ var app = new Vue({
     mounted() {
         this.triggerQuery()
 
-        axios.get("resources/question-bank.csv", {
-            headers: {
-                'Content-Type': 'text/plain'
-            }
-         })
-        .then(response => this.generateQuestionList(response))
-        .catch(response => console.log(response));
+        $.ajax({
+            type: "GET",  
+            url: "resources/question-bank.csv",
+            dataType: "text",       
+            success: function(response)  
+            {
+              data = $.csv.toArrays(response);
+              app.generateQuestionList(data);
+            }   
+          });
+
     },
 
     data: {
