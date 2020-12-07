@@ -1736,14 +1736,14 @@
         // Push GTM Event +  Append utm params to GTM virtual Page view
         window.dataLayer = window.dataLayer || [];
         var urlParams = new URLSearchParams(window.location.search);
-        window.dataLayer.push({
-            'event': 'registration-LP-View',
-            'virtual_source': urlParams.get('utm_source'),
-            'virtual_medium': urlParams.get('utm_medium'),
-            'virtual_campaign': urlParams.get('utm_campaign'),
-            'virtual_date': urlParams.get('utm_date'),
-            'virtual_term': urlParams.get('utm_term')
-        });
+        // window.dataLayer.push({
+        //     'event': 'registration-LP-View',
+        //     'virtual_source': urlParams.get('utm_source'),
+        //     'virtual_medium': urlParams.get('utm_medium'),
+        //     'virtual_campaign': urlParams.get('utm_campaign'),
+        //     'virtual_date': urlParams.get('utm_date'),
+        //     'virtual_term': urlParams.get('utm_term')
+        // });
         // Push GTM Event +  Append utm params to GTM virtual Page view
     </script>
 </body>
